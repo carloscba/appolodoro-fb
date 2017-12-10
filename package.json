@@ -21,8 +21,10 @@
     "url": "https://github.com/carloscba/appolodoro-fb/issues"
   },
   "homepage": "https://github.com/carloscba/appolodoro-fb#readme",
-  "devDependencies": {
+  "dependencies": {
     "axios": "^0.17.1",
+  },
+  "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "mocha": "^4.0.1"

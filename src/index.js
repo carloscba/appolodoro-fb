@@ -65,17 +65,12 @@ class AppolodoroFb{
         }        
     }
 
-    getShareUrl(href, redirect_uri){
-        const url = `https://www.facebook.com/dialog/share?app_id=${this.appId}&href=${href}&redirect_uri=${redirect_uri}&display=page`;
-        return url;
-    }
-
     /**
      * 
-     * @param {*} videoData 
+     * @param {*} videoData  {file_url, title, description}
      */
     postVideo(videoData){
-        const url = 'https://graph-video.facebook.com/'+this.uid+'/videos?access_token='+this.accessToken;
+        const url = `https://graph-video.facebook.com/${this.uid}/videos?access_token=${this.accessToken}`
         
         const data = new FormData();
         data.append('file_url', videoData.file_url);
@@ -84,9 +79,13 @@ class AppolodoroFb{
 
         return axios.post(url, data);
     }
+    /**
+     *
+     *  @param {*} videoData  {url, caption}
+     */
 
     postImage(imageData){
-        const url = 'https://graph.facebook.com/v2.4/me/photos';
+        const url = `https://graph.facebook.com/v2.4/me/photos`;
         
         const data = new FormData();
         data.append('url', imageData.url);
